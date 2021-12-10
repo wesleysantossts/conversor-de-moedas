@@ -13,7 +13,8 @@
     "@react-native-picker/picker": "^2.2.1",
     "react": "17.0.2",
     "react-native": "0.66.4",
-    "react-native-picker-select": "^8.0.4"
+    "react-native-picker-select": "^8.0.4",
+    "twrnc": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
