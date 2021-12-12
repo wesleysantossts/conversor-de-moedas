@@ -2,7 +2,7 @@
 
 Projeto de conversor de moedas desenvolvido em React-Native e Tailwind.abs
 
-<img src="./src/assets/img/Conversor1.png" alt="Tela do conversor de moedas" height="400px" textAlign="center"/>
+<img src="./src/assets/img/Conversor1.png" alt="Tela do conversor de moedas" height="400px" margin="auto"/>
 
 ## Testar
 
