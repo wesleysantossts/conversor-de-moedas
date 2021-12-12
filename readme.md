@@ -23,7 +23,7 @@ Para saber mais detalhes do funcionamento do app: [Wiki](https://github.com/wesl
     
 # Contribuição
     
-Agradecimentos aos contribuidores do projeto.
+Agradecimento especial aos contribuidores do projeto.
     
 <table>
   <tr>
