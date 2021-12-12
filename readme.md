@@ -20,3 +20,19 @@ Feito isso, o emulador reproduzirá exatamente essas telas no seu computador.
 ## Mais informações
 
 Para saber mais detalhes do funcionamento do app: [Wiki](https://github.com/wesleysantossts/conversor-de-moedas/wiki/Página-Inicial)
+    
+# Contribuição
+    
+Agradecimentos aos contribuidores do projeto.
+    
+<table>
+  <tr>
+    <td border="1px solid #ddd" align="center">
+      <a href="https://github.com/wesleysantossts">
+        <img src="https://avatars.githubusercontent.com/u/56703526?v=4" alt="Wesley Santos" width="100px"/>
+        <br/>
+        <sub><b>Wesley Santos</b></sub><br/>
+      </a>
+    </td>
+  </tr>
+</table>
