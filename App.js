@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, ActivityIndicator, Keyboard } from 'react-native';
 import tw from "twrnc";
 import api from './src/service/api.js';
 
@@ -9,6 +9,9 @@ export default function App() {
   const [moeda, setMoeda] = useState([]);
   const [moedaSelecionada, setMoedaSelecionada] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [valor, setValor] = useState(null);
+
+  const [resultado, setResultado] = useState(null)
 
   useEffect(()=>{
     (async function loadData(){
@@ -25,9 +28,19 @@ export default function App() {
 
       setMoeda(arrayMoedas);
       setLoading(false);
-      console.log(moeda);
     })()
   }, []);
+
+  async function converter(){
+    const response = await api.get(`all/${moedaSelecionada}-BRL`)
+    const resultado = (valor * parseFloat(response.data[moedaSelecionada].ask));
+
+    console.log(response.data[moedaSelecionada].ask)
+    setResultado(`R$ ${resultado.toFixed(2)}`)
+
+    // dismiss() - usado para minimizar o teclado
+    Keyboard.dismiss()
+  }
 
   if(loading){
     return(
@@ -48,18 +61,22 @@ export default function App() {
           placeholder={"Ex.: 150"}
           style={tw`w-full`}
           keyboardType='numeric'
+          onChangeText={(value)=> setValor(value)}
           />
         </View>
           
-        <TouchableOpacity style={[tw`items-center`, {width: "80%", padding: 15, marginBottom: 20, backgroundColor: "#E07A5F", borderBottomLeftRadius: 8, borderBottomRightRadius: 8}]} onPress={()=>{}}>
+        <TouchableOpacity style={[tw`items-center`, {width: "80%", padding: 15, marginBottom: 20, backgroundColor: "#E07A5F", borderBottomLeftRadius: 8, borderBottomRightRadius: 8}]} onPress={converter}>
           <Text style={tw`text-lg text-white font-bold uppercase`}>Converter</Text>
         </TouchableOpacity>
-  
-        <View style={styles.areaResultado}>
-          <Text style={[tw`text-4xl font-bold`, {color: "#3D405B"}]}>30 USD</Text>
-          <Text style={[tw`text-sm`, {color: "#3D405B"}]}>Corresponde a</Text>
-          <Text style={[tw`text-4xl font-bold`, {color: "#3D405B"}]}>19,90</Text>
-        </View>
+
+        {resultado && (
+          <View style={styles.areaResultado}>
+            <Text style={[tw`text-4xl font-bold`, {color: "#3D405B"}]}>{valor ? valor : null} {moedaSelecionada}</Text>
+            <Text style={[tw`text-sm`, {color: "#3D405B"}]}>Corresponde a</Text>
+            <Text style={[tw`text-4xl font-bold`, {color: "#3D405B"}]}>{resultado}</Text>
+          </View>
+        )
+        }
       </View>
     )
   }
