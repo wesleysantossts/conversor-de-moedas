@@ -19,4 +19,4 @@ Feito isso, o emulador reproduzirá exatamente essas telas no seu computador.
 
 ## Mais informações
 
-Para saber mais detalhes do funcionamento do app: [Wiki](https://github.com/wesleysantossts/conversor-de-moedas/wiki)
+Para saber mais detalhes do funcionamento do app: [Wiki](https://github.com/wesleysantossts/conversor-de-moedas/wiki/Página-Inicial)
