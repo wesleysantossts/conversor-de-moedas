@@ -1,8 +1,8 @@
 # Conversor de moedas
 
-Projeto de conversor de moedas desenvolvido em React-Native e Tailwind.abs
+Projeto de conversor de moedas desenvolvido em React-Native e Tailwind.
 
-<img src="./src/assets/img/Conversor1.png" alt="Tela do conversor de moedas" height="400px" margin="auto"/>
+<img src="./src/assets/img/Conversor1.png" alt="Tela do conversor de moedas" height="400px"/>
 
 ## Testar
 
